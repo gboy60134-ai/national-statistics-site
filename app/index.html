@@ -4,34 +4,27 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bharat by Numbers — India in figures</title>
-<meta name="description" content="India's population, economy, health, schooling and work — figures with sources and years.">
+<meta name="description" content="India's population, economy, states, health, schooling and work — figures with sources and years.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="site-header">
-  <div class="wrap">
+<header class="masthead">
+  <div class="wrap masthead-inner">
     <a class="brand" href="#/home">Bharat <span>by Numbers</span></a>
-    <nav aria-label="Sections">
-      <a href="#/home">Home</a>
-      <a href="#/population">Population</a>
-      <a href="#/economy">Economy</a>
-      <a href="#/health">Health</a>
-      <a href="#/education">Education</a>
-      <a href="#/work">Work</a>
-      <a href="#/sources">Sources</a>
-    </nav>
+    <p class="tagline">India’s statistics, plainly told</p>
   </div>
+  <nav id="nav" class="wrap" aria-label="Sections"></nav>
 </header>
 <main id="view" class="wrap"></main>
-<footer class="site-footer">
+<footer class="colophon">
   <div class="wrap">
-    <p>Bharat by Numbers — India’s statistics, plainly told. Figures: World Bank WDI, IMF WEO, ILO, UNDP (2022–2025). This site makes no network requests and sets no cookies.</p>
-    <p><a href="#/sources">All sources</a> · <a href="#/home">Home</a></p>
+    <p>Bharat by Numbers — India’s statistics, plainly told. Figures: World Bank WDI, IMF WEO, UNDP, ILO, Sample Registration System, RBI and others, 2019–2025. This site makes no network requests and sets no cookies.</p>
+    <p><a href="#/sources">All sources</a> · <a href="#/home">Home</a> · <a href="#/compare">India vs the world</a></p>
   </div>
 </footer>
-<script src="data.js"></script>
-<script src="charts.js"></script>
-<script src="views.js"></script>
-<script src="app.js"></script>
+<script src="figures.js"></script>
+<script src="draw.js"></script>
+<script src="pages.js"></script>
+<script src="boot.js"></script>
 </body>
 </html>
