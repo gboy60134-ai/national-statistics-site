@@ -55,8 +55,14 @@ async function handIn() {
   const out = resolve(process.env.MAKEFUN_OUTPUT_DIR ?? '/output');
   if (out === '/') fail('refusing to use / as the output directory');
 
-  await rm(out, { recursive: true, force: true });
   await mkdir(out, { recursive: true });
+  // Clear the output directory's contents without removing the directory
+  // itself: in the grader /output is a mounted volume, and removing a mount
+  // point fails with EBUSY (that is what killed the first submission's
+  // grade run). The grader hands us an empty /output anyway.
+  for (const name of await readdir(out)) {
+    await rm(join(out, name), { recursive: true, force: true });
+  }
   await cp(join(root, 'app'), join(out, 'app'), { recursive: true });
   await cp(join(root, 'screenshots'), join(out, 'screenshots'), { recursive: true });
 
